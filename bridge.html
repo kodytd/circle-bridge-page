@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f9f9f9;
+    }
+    .message {
+      background-color: #ffd700;
+      color: #000;
+      padding: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0 auto;
+      max-width: 600px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="message">
+    🎁 One more step to unlock your resource... 🎁
+  </div>
+
+  <script>
+    // Extract email from URL and store in localStorage
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get('email');
+
+    if (email) {
+      localStorage.setItem('circle_email', email);
+    }
+
+    // Redirect to Circle sign-up page after 2 seconds
+    setTimeout(() => {
+      window.location.href = "https://login.circle.so/sign_up?request_host=growth-tools.circle.so&user%5Binvitation_token%5D=e5fafc5277f3f9c2dd86b5f1d404a8478460f3f9-16fef592-c4d5-40e8-9461-fae79176a928#email";
+    }, 2000);
+  </script>
+
+</body>
+</html>
